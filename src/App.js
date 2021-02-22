@@ -7,11 +7,14 @@ import Home from "./Home.js"
 function App() {
     return (
       // BEM
+      <Router>
       <div className = "app" >
-        <Header />
-        <Home />
-
+      <Switch>
+       <Header />
+       <Home />
+      </Switch>
       </div>
+      </Router>
     );
 }
 
