@@ -10,24 +10,21 @@ function Header() {
 
   return (
       <div className="header">
-      <Link to="/">
-        <img
-          className="header__logo"
-          src="https://1079life.com/wp-content/uploads/2018/12/amazon_PNG11.png"
-        />
-      </Link>
+        <Link to="/">
+          <img
+            className="header__logo"
+            src="https://1079life.com/wp-content/uploads/2018/12/amazon_PNG11.png"
+          />
+        </Link>
 
 
          <div className="header__search">
-            <input
-            className="header__searchInput"
-            type="text"/>
-            <SearchIcon
-            className="header__searchIcon"/>
-
+            <input className="header__searchInput" type="text"/>
+            <SearchIcon className="header__searchIcon"/>
          </div>
 
          <div className="header__nav">
+          <Link to="/Login">
             <div className="header__option">
                 <span className="header__optionLineOne">
                  Hello Guest
@@ -36,7 +33,7 @@ function Header() {
                  Sign In
                 </span>
             </div>
-
+            <Link/>
             <div className="header__option">
               <span className="header__optionLineOne">
                 Return
@@ -46,29 +43,22 @@ function Header() {
               </span>
               </div>
 
-            <div className="header__option">
-              <span className="header__optionLineOne">
-                Your
-              </span>
-              <span className="header__optionLineTwo">
-                Prime
-              </span>
-            </div>
+              <div className="header__option">
+            <span className="header__optionLineOne">Your</span>
+            <span className="header__optionLineTwo">Prime</span>
+          </div>
 
             <Link to="/checkout">
-              <div className="header__optionBasket">
-               <ShoppingBasketIcon />
-                <span
-                  className="header__optionLineTwo header__basketCount">
-                  {basket?.length}
-                </span>
-              </div>
-            </Link>
-
-
-         </div>
+          <div className="header__optionBasket">
+            <ShoppingBasketIcon />
+            <span className="header__optionLineTwo header__basketCount">
+              {basket?.length}
+                  </span>
+            </div>
+          </Link>
+        </div>
       </div>
-  )
-}
+    );
+  }
 
 export default Header;
