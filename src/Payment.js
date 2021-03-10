@@ -73,7 +73,7 @@ function Payment() {
         )
       </h1>
 
-
+//
         {/* Payment section - delivery address */}
         <div className="payment__section">
           <div className="payment__title">
