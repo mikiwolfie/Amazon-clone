@@ -42,34 +42,34 @@ function App() {
     });
   }, []);
 
-  return (
-    <Router>
-      <div className="app">
-        <Switch>
-        <Route path="/orders">
-          <Orders />
-        </Route>
-        <Route path="/login">
-          <Login />
-        </Route>
-        <Route path="/checkout">
-          <Header />
-          <Checkout />
-        </Route>
-        <Route path="/payment">
-          <Header />
-          <Elements stripe={promise}>
-            <Payment />
-          </Elements>
-        </Route>
-        <Route path="/">
-          <Header />
-          <Home />
-        </Route>
-      </Switch>
-    </div>
-  </Router>
-);
+    return (
+      <Router>
+        <div className="app">
+          <Switch>
+          <Route path="/orders">
+            <Orders />
+          </Route>
+          <Route path="/login">
+            <Login />
+          </Route>
+          <Route path="/checkout">
+            <Header />
+            <Checkout />
+          </Route>
+          <Route path="/payment">
+            <Header />
+            <Elements stripe={promise}>
+              <Payment />
+            </Elements>
+          </Route>
+          <Route path="/">
+            <Header />
+            <Home />
+          </Route>
+        </Switch>
+      </div>
+    </Router>
+  );
 }
 
 export default App;
