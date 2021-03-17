@@ -13,7 +13,7 @@ const reducer = (state, action) => {
     case "ADD_TO_BASKET":
       return {
         ...state,
-        basket: [...state.basket, action.item],
+        basket: [...state.basket, action.item] ,
       };
 
       case "EMPTY_BASKET":

@@ -8,11 +8,11 @@ function Login() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
-    const register = e => {
+    const signIn = e => {
         e.preventDefault();
 
         auth
-            .createUserWithEmailAndPassword(email, password)
+            .signInWithEmailAndPassword(email, password)
             .then((auth) => {
                 // it successfully created a new user with email and password
                 if (auth) {

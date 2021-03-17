@@ -33,7 +33,7 @@ function App() {
           user: authUser,
         });
       } else {
-        // the user is logged out
+        // the user is logged out 
         dispatch({
           type: "SET_USER",
           user: null,
@@ -47,6 +47,7 @@ function App() {
         <div className="app">
           <Switch>
           <Route path="/orders">
+            <Header />
             <Orders />
           </Route>
           <Route path="/login">
