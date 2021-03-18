@@ -33,7 +33,7 @@ function App() {
           user: authUser,
         });
       } else {
-        // the user is logged out 
+        // the user is logged out
         dispatch({
           type: "SET_USER",
           user: null,
@@ -43,6 +43,7 @@ function App() {
   }, []);
 
     return (
+      // BEM
       <Router>
         <div className="app">
           <Switch>
