@@ -1,9 +1,9 @@
 .login {
-    background-color: white;
-    height: 100vh;
-   display: flex;
-   flex-direction: column;
-   align-items: center;
+  background-color: white;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .login__logo {
@@ -42,9 +42,8 @@
 }
 
 .login__container > p {
-    margin-top: 15px;
-    margin-bottom: 15px;
-    font-size: 12px;
+  margin-top: 15px;
+  font-size: 12px;
 }
 
 .login__signInButton {
@@ -54,7 +53,7 @@
   height: 30px;
   border: 1px solid;
   margin-top: 10px;
-  border-color: darkgray;
+  border-color: #a88734 #9c7e31 #846a29;
 }
 
 .login__registerButton {
@@ -63,4 +62,10 @@
   height: 30px;
   border: 1px solid;
   margin-top: 10px;
+  border-color: darkgray;
+}
+
+.mikiwolfie {
+  border-right: 10px;
+  color: lightgray;
 }
