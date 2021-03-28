@@ -23,20 +23,20 @@ function Payment() {
     const [clientSecret, setClientSecret] = useState(true);
 
     useEffect(() => {
-          // generate the special stripe secret which allows us to charge a customer
-          const getClientSecret = async () => {
-              const response = await axios({
-                  method: 'post',
-                  // Stripe expects the total in a currencies subunits
-                  url: `/payments/create?total=${getBasketTotal(basket) * 100}`
-              });
-              setClientSecret(response.data.clientSecret)
-          }
+        // generate the special stripe secret which allows us to charge a customer
+        const getClientSecret = async () => {
+            const response = await axios({
+                method: 'post',
+                // Stripe expects the total in a currencies subunits
+                url: `/payments/create?total=${getBasketTotal(basket) * 100}`
+            });
+            setClientSecret(response.data.clientSecret)
+        }
 
-    getClientSecret();
-  }, [basket])
+        getClientSecret();
+    }, [basket])
 
-  console.log('THE SECRET IS >>>', clientSecret)
+    console.log('THE SECRET IS >>>', clientSecret)
     console.log('👱', user)
 
     const handleSubmit = async (event) => {
@@ -45,11 +45,11 @@ function Payment() {
         setProcessing(true);
 
         const payload = await stripe.confirmCardPayment(clientSecret, {
-                payment_method: {
-                    card: elements.getElement(CardElement)
-                }
-            }).then(({ paymentIntent }) => {
-                // paymentIntent = payment confirmation
+            payment_method: {
+                card: elements.getElement(CardElement)
+            }
+        }).then(({ paymentIntent }) => {
+            // paymentIntent = payment confirmation
 
             db
               .collection('users')
@@ -76,13 +76,13 @@ function Payment() {
     }
 
     const handleChange = event => {
-          // Listen for changes in the CardElement
-          // and display any errors as the customer types their card details
-          setDisabled(event.empty);
-          setError(event.error ? event.error.message : "");
-      }
+        // Listen for changes in the CardElement
+        // and display any errors as the customer types their card details
+        setDisabled(event.empty);
+        setError(event.error ? event.error.message : "");
+    }
 
-      return (
+    return (
         <div className='payment'>
             <div className='payment__container'>
                 <h1>
@@ -92,19 +92,19 @@ function Payment() {
                 </h1>
 
 
-{/* Payment section - delivery address */}
-        <div className='payment__section'>
-            <div className='payment__title'>
-                <h3>Delivery Address</h3>
-            </div>
-            <div className='payment__address'>
-                <p>{user?.email}</p>
-                <p>123 React Lane</p>
-                <p>Los Angeles, CA</p>
-            </div>
-        </div>
+                {/* Payment section - delivery address */}
+                <div className='payment__section'>
+                    <div className='payment__title'>
+                        <h3>Delivery Address</h3>
+                    </div>
+                    <div className='payment__address'>
+                        <p>{user?.email}</p>
+                        <p>123 React Lane</p>
+                        <p>Los Angeles, CA</p>
+                    </div>
+                </div>
 
-        {/* Payment section - Review Items */}
+                {/* Payment section - Review Items */}
                 <div className='payment__section'>
                     <div className='payment__title'>
                         <h3>Review items and delivery</h3>
@@ -121,6 +121,7 @@ function Payment() {
                         ))}
                     </div>
                 </div>
+
 
                 {/* Payment section - Payment method */}
                 <div className='payment__section'>
@@ -159,4 +160,4 @@ function Payment() {
     )
 }
 
-export default Payment;
+export default Payment

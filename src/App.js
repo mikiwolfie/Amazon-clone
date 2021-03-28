@@ -13,7 +13,7 @@ import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
 
 const promise = loadStripe(
-    "pk_test_51ISZRjIv9jWTDXdN52FWwLXH4dK7e0gH3q89KBtqYYsgqUFHmXQNgdxN9J227JEtA62EQauxQP8v18hf2Da9nh5h00ZDMktQHq"
+  "pk_test_51HPvU9DFg5koCdLGJJbNo60QAU99BejacsvnKvT8xnCu1wFLCuQP3WBArscK3RvSQmSIB3N0Pbsc7TtbQiJ1vaOi00X9sIbazL"
 );
 
 function App() {
@@ -42,11 +42,10 @@ function App() {
     });
   }, []);
 
-    return (
-      // BEM
-      <Router>
-        <div className="app">
-          <Switch>
+  return (
+    <Router>
+      <div className="app">
+        <Switch>
           <Route path="/orders">
             <Header />
             <Orders />
